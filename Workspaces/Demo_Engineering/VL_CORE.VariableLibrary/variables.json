@@ -1,0 +1,71 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/variableLibrary/definition/variables/1.0.0/schema.json",
+  "variables": [
+    {
+      "name": "ENVIRONMENT",
+      "note": "",
+      "type": "String",
+      "value": "NONE"
+    },
+    {
+      "name": "STORE_WORKSPACE_NAME",
+      "note": "",
+      "type": "String",
+      "value": "NONE"
+    },
+    {
+      "name": "RAW_LH_NAME",
+      "note": "",
+      "type": "String",
+      "value": "NONE"
+    },
+    {
+      "name": "BASE_LH_NAME",
+      "note": "",
+      "type": "String",
+      "value": "NONE"
+    },
+    {
+      "name": "CURATED_LH_NAME",
+      "note": "",
+      "type": "String",
+      "value": "NONE"
+    },
+    {
+      "name": "SCHEMA_ENABLED",
+      "note": "",
+      "type": "Boolean",
+      "value": false
+    },
+    {
+      "name": "STORE_WORKSPACE_ID",
+      "note": "",
+      "type": "Guid",
+      "value": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "name": "RAW_LH_ID",
+      "note": "",
+      "type": "Guid",
+      "value": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "name": "BASE_LH_ID",
+      "note": "",
+      "type": "Guid",
+      "value": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "name": "CURATED_LH_ID",
+      "note": "",
+      "type": "Guid",
+      "value": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "name": "DATASET",
+      "note": "",
+      "type": "Integer",
+      "value": 0
+    }
+  ]
+}

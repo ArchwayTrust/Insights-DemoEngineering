@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "DP-Ops-IT-GraphAPI"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "13cc3cfd-5411-9f7d-42d4-dcf3f1fcd1ca"
+  }
+}

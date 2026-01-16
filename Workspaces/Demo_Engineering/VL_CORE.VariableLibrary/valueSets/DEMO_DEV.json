@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/variableLibrary/definition/valueSet/1.0.0/schema.json",
+  "name": "DEMO_DEV",
+  "variableOverrides": [
+    {
+      "name": "ENVIRONMENT",
+      "value": "DEMO_DEV"
+    },
+    {
+      "name": "STORE_WORKSPACE_NAME",
+      "value": "Demo_Store_PPE"
+    },
+    {
+      "name": "RAW_LH_NAME",
+      "value": "LH_Demo_Raw"
+    },
+    {
+      "name": "BASE_LH_NAME",
+      "value": "LH_Demo_Base"
+    },
+    {
+      "name": "CURATED_LH_NAME",
+      "value": "LH_Curated_Base"
+    },
+    {
+      "name": "SCHEMA_ENABLED",
+      "value": true
+    },
+    {
+      "name": "STORE_WORKSPACE_ID",
+      "value": "ab1e7a63-aaa7-44f7-865a-daafebda312f"
+    },
+    {
+      "name": "RAW_LH_ID",
+      "value": "a5072910-1bb9-4054-b5d3-6a92f9ee3243"
+    },
+    {
+      "name": "BASE_LH_ID",
+      "value": "417bd5a7-79e0-4c27-8a64-79c86372c62f"
+    },
+    {
+      "name": "CURATED_LH_ID",
+      "value": "d146d2a7-9148-4f3f-b78a-27df6ee060b1"
+    },
+    {
+      "name": "DATASET",
+      "value": 2026
+    }
+  ]
+}

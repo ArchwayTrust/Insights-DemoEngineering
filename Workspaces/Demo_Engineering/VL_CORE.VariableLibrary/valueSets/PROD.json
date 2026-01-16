@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/variableLibrary/definition/valueSet/1.0.0/schema.json",
+  "name": "PROD",
+  "variableOverrides": [
+    {
+      "name": "ENVIRONMENT",
+      "value": "PROD"
+    },
+    {
+      "name": "STORE_WORKSPACE_NAME",
+      "value": "Lakehouse"
+    },
+    {
+      "name": "RAW_LH_NAME",
+      "value": "LH_Raw"
+    },
+    {
+      "name": "BASE_LH_NAME",
+      "value": "LH_Base"
+    },
+    {
+      "name": "CURATED_LH_NAME",
+      "value": "LH_Curated"
+    },
+    {
+      "name": "STORE_WORKSPACE_ID",
+      "value": "39462dfb-c8ac-403f-b51d-d54a5bce6984"
+    },
+    {
+      "name": "RAW_LH_ID",
+      "value": "9d30d9f0-74e8-4aca-b7d9-fa979cfe3528"
+    },
+    {
+      "name": "BASE_LH_ID",
+      "value": "0f184d6f-efe9-4203-89d0-729be61dd775"
+    },
+    {
+      "name": "CURATED_LH_ID",
+      "value": "87897f80-c89c-437f-9080-2d136c04ce59"
+    },
+    {
+      "name": "DATASET",
+      "value": 2026
+    }
+  ]
+}

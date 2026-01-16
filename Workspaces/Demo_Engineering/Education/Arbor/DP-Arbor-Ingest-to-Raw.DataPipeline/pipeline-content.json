@@ -1,0 +1,274 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Copy Standardised Assessment to LH_Raw",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "1:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "SnowflakeSource",
+            "query": "SELECT\r\nA.STUDENT_UNIQUE_ID AS \"student_unique_id\",\r\nA.STANDARDISED_ASSESSMENT_MARK_UNIQUE_ID AS \"standardised_assessment_mark_unique_id\",\r\nA.STANDARDISED_ASSESSMENT_MARK_ID AS \"standardised_assessment_mark_id\",\r\nA.APPLICATION_ID AS \"application_id\",\r\nA.STUDENT_ID AS \"student_id\",\r\nA.ASSESSMENT_NAME AS \"assessment_name\",\r\nA.ASSESSMENT_CODE AS \"assessment_code\",\r\nA.MARK_GRADE AS \"mark_grade\",\r\nA.MARK_NUMERIC AS \"mark_numeric\",\r\nA.MARK_COMMENT AS \"mark_comment\",\r\nA.MARK_CATEGORY AS \"mark_category\",\r\nA.INTENDED_CURRICULUM_GRADE AS \"intended_curriculum_grade\",\r\nA.ASSESSMENT_DATE AS \"assessment_date\",\r\nA.SUBJECT_CODE AS \"subject_code\",\r\nA.SUBJECT_NAME AS \"subject_name\",\r\nY.ACADEMIC_YEAR_CODE AS \"academic_year_code\",\r\nCURRENT_TIMESTAMP() AS \"extraction_date_time\"\r\nFROM ARBOR_BI_CONNECTOR_PRODUCTION.ARBOR_MIS_ENGLAND_MODELLED.STANDARDISED_ASSESSMENT_MARKS A\r\nINNER JOIN ARBOR_BI_CONNECTOR_PRODUCTION.ARBOR_MIS_ENGLAND_MODELLED.ACADEMIC_YEARS Y \r\n          ON Y.APPLICATION_ID = A.APPLICATION_ID AND Y.CALENDAR_YEAR_START_DATE <= A.ASSESSMENT_DATE AND Y.CALENDAR_YEAR_END_DATE >= A.ASSESSMENT_DATE\r\n--WHERE Y.IS_CURRENT = 1\r\nWHERE Y.ACADEMIC_YEAR_CODE IN ('2024-2025', '2025-2026')",
+            "exportSettings": {
+              "type": "SnowflakeExportCopyCommand"
+            },
+            "datasetSettings": {
+              "annotations": [],
+              "type": "SnowflakeTable",
+              "schema": [],
+              "typeProperties": {
+                "database": "ARBOR_BI_CONNECTOR_PRODUCTION"
+              },
+              "externalReferences": {
+                "connection": "c8ebb544-13f5-47e8-9f62-1c7d127c221b"
+              }
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "annotations": [],
+              "linkedService": {
+                "name": "d9fd9581_4f7d_4a52_9a9b_5effc7a59d07",
+                "properties": {
+                  "annotations": [],
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "workspaceId": "@pipeline().libraryVariables.VL_STORE_WORKSPACE_ID",
+                    "artifactId": "@pipeline().libraryVariables.VL_RAW_LH_ID",
+                    "rootFolder": "Tables"
+                  }
+                }
+              },
+              "type": "LakehouseTable",
+              "schema": [],
+              "typeProperties": {
+                "schema": {
+                  "value": "@variables('SCHEMA')",
+                  "type": "Expression"
+                },
+                "table": "edu_arbor_standardised_assessment_marks"
+              }
+            }
+          },
+          "enableStaging": true,
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "student_unique_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "student_unique_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "standardised_assessment_mark_unique_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "standardised_assessment_mark_unique_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "standardised_assessment_mark_id",
+                  "type": "Decimal",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "standardised_assessment_mark_id",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "application_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "application_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "student_id",
+                  "type": "Decimal",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "student_id",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "assessment_name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "assessment_name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "assessment_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "assessment_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "mark_grade",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "mark_grade",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "mark_numeric",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "mark_numeric",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "mark_comment",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "mark_comment",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "mark_category",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "mark_category",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "intended_curriculum_grade",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "intended_curriculum_grade",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "assessment_date",
+                  "type": "DateTimeOffset"
+                },
+                "sink": {
+                  "name": "assessment_date",
+                  "physicalType": "date"
+                }
+              },
+              {
+                "source": {
+                  "name": "subject_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "subject_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "subject_name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "subject_name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "academic_year_code"
+                },
+                "sink": {
+                  "name": "academic_year_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "extraction_date_time",
+                  "type": "DateTimeOffset"
+                },
+                "sink": {
+                  "name": "extraction_date_time",
+                  "physicalType": "string"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": false,
+              "treatBooleanAsNumber": false
+            }
+          }
+        }
+      }
+    ],
+    "variables": {
+      "SCHEMA": {
+        "type": "String",
+        "defaultValue": "edu"
+      }
+    },
+    "libraryVariables": {
+      "VL_ENVIRONMENT": {
+        "type": "String",
+        "variableName": "ENVIRONMENT",
+        "libraryName": "VL_CORE"
+      },
+      "VL_STORE_WORKSPACE_ID": {
+        "type": "String",
+        "variableName": "STORE_WORKSPACE_ID",
+        "libraryName": "VL_CORE"
+      },
+      "VL_RAW_LH_ID": {
+        "type": "String",
+        "variableName": "RAW_LH_ID",
+        "libraryName": "VL_CORE"
+      }
+    }
+  }
+}
