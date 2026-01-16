@@ -8,35 +8,39 @@
     },
     {
       "name": "STORE_WORKSPACE_NAME",
-      "value": "Lakehouse"
+      "value": "Demo_Store_Prod"
     },
     {
       "name": "RAW_LH_NAME",
-      "value": "LH_Raw"
+      "value": "LH_Demo_Raw"
     },
     {
       "name": "BASE_LH_NAME",
-      "value": "LH_Base"
+      "value": "LH_Demo_Base"
     },
     {
       "name": "CURATED_LH_NAME",
-      "value": "LH_Curated"
+      "value": "LH_Curated_Base"
+    },
+    {
+      "name": "SCHEMA_ENABLED",
+      "value": true
     },
     {
       "name": "STORE_WORKSPACE_ID",
-      "value": "39462dfb-c8ac-403f-b51d-d54a5bce6984"
+      "value": "76251cd0-6ef7-43b2-9d88-73e432e4c33a"
     },
     {
       "name": "RAW_LH_ID",
-      "value": "9d30d9f0-74e8-4aca-b7d9-fa979cfe3528"
+      "value": "45069b2b-e529-4bff-bab9-72cf516fd3b8"
     },
     {
       "name": "BASE_LH_ID",
-      "value": "0f184d6f-efe9-4203-89d0-729be61dd775"
+      "value": "cbe52e11-2412-43d1-85b0-819d0b789c29"
     },
     {
       "name": "CURATED_LH_ID",
-      "value": "87897f80-c89c-437f-9080-2d136c04ce59"
+      "value": "6cec959d-e357-40a7-b201-d05089635d75"
     },
     {
       "name": "DATASET",

@@ -15,14 +15,14 @@
         "typeProperties": {
           "source": {
             "type": "LakehouseTableSource",
-            "sqlReaderQuery": "SELECT *\nFROM dbo.arbor_meta\nWHERE ingest_data_id = '5'",
+            "sqlReaderQuery": "SELECT *\nFROM edu.arbor_ingest_metadata\nWHERE data_classification = 'Interventions'",
             "partitionOption": "None"
           },
           "firstRowOnly": false,
           "datasetSettings": {
             "annotations": [],
             "connectionSettings": {
-              "name": "925a760a_c281_40c6_b98e_a6fa45990f6d",
+              "name": "dae601e1_1c3e_4d3f_9983_366eda0b9eee",
               "properties": {
                 "annotations": [],
                 "type": "Lakehouse",
@@ -103,7 +103,7 @@
                   "datasetSettings": {
                     "annotations": [],
                     "connectionSettings": {
-                      "name": "205ac1fc_bf8e_4c63_aaef_49e71d9e16ef",
+                      "name": "0f23d809_ddc7_4fbf_81d3_60dd27cda1a7",
                       "properties": {
                         "annotations": [],
                         "type": "Lakehouse",

@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "DataPipeline",
-    "displayName": "DP-Arbor-Ingest-to-Raw-OLD",
-    "description": "Old Style"
+    "type": "Notebook",
+    "displayName": "NB-RefreshSQL",
+    "description": "New notebook"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "6020ce76-88f6-a204-4e63-eed659d6fe11"
+    "logicalId": "a89ecaf0-852d-b358-467a-2f629b5d45dc"
   }
 }
